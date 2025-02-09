@@ -21,7 +21,7 @@ const ViewDoctorAppointment = () => {
 
   const retrieveAllAppointments = async () => {
     const response = await axios.get(
-      "http://localhost:8081/api/appointment/doctor/id?doctorId="+doctor.id
+      `${window.APP_CONFIG.API_BASE_URL}/api/appointment/doctor/id?doctorId=`+doctor.id
     );
     console.log(response.data);
     return response.data;

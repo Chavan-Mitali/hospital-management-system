@@ -19,7 +19,7 @@ const AddAppointment = () => {
 
   const saveAppointment = (event) => {
     event.preventDefault();
-    fetch("http://localhost:8081/api/appointment/patient/add", {
+    fetch(`${window.APP_CONFIG.API_BASE_URL}/api/appointment/patient/add`, {
       method: "POST",
       headers: {
         Accept: "application/json",

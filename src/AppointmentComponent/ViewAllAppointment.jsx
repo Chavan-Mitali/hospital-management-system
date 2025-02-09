@@ -19,7 +19,7 @@ const ViewAllAppointment = () => {
 
   const retrieveAllAppointments = async () => {
     const response = await axios.get(
-      "http://localhost:8081/api/appointment/all"
+      `${window.APP_CONFIG.API_BASE_URL}/api/appointment/all`
     );
     console.log(response.data);
     return response.data;

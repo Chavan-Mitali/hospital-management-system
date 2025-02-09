@@ -8,7 +8,7 @@ const HomePage = () => {
   const [allDoctor, setAllDoctor] = useState([]);
 
   const retrieveAllDoctor = async () => {
-    const response = await axios.get("http://localhost:8081/api/doctor/all");
+    const response = await axios.get(`${window.APP_CONFIG.API_BASE_URL}/api/doctor/all`);
     console.log(response.data);
     return response.data;
   };

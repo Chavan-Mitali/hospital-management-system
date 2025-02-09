@@ -17,7 +17,7 @@ const UserLoginForm = () => {
   };
 
   const loginAction = (e) => {
-    fetch("http://localhost:8081/api/user/login", {
+    fetch(`${window.APP_CONFIG.API_BASE_URL}/api/user/login`, {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -16,7 +16,7 @@ const AssignAppointment = () => {
 
   const retrieveAppointment = async () => {
     const response = await axios.get(
-      "http://localhost:8081/api/appointment/id?appointmentId=" + appointmentId
+      `${window.APP_CONFIG.API_BASE_URL}/api/appointment/id?appointmentId=` + appointmentId
     );
     return response.data;
   };
@@ -41,7 +41,7 @@ const AssignAppointment = () => {
   }, []);
 
   const retrieveAllDoctor = async () => {
-    const response = await axios.get("http://localhost:8081/api/doctor/all");
+    const response = await axios.get(`${window.APP_CONFIG.API_BASE_URL}/api/doctor/all`);
     console.log(response.data);
     return response.data;
   };
@@ -53,7 +53,7 @@ const AssignAppointment = () => {
 
     axios
       .post(
-        "http://localhost:8081/api/appointment/admin/assign/doctor",
+        `${window.APP_CONFIG.API_BASE_URL}/api/appointment/admin/assign/doctor`,
         formData
       )
       .then((result) => {

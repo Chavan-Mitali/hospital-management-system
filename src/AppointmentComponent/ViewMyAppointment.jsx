@@ -23,7 +23,7 @@ const ViewMyAppointment = () => {
 
   const retrieveAllAppointments = async () => {
     const response = await axios.get(
-      "http://localhost:8081/api/appointment/patient/id?patientId=" + patient.id
+      `${window.APP_CONFIG.API_BASE_URL}/api/appointment/patient/id?patientId=` + patient.id
     );
     console.log(response.data);
     return response.data;
@@ -32,7 +32,7 @@ const ViewMyAppointment = () => {
   const cancelAppointment = (appointmentId) => {
     console.log(appointmentId);
     console.log("ghittinh api ** ");
-    fetch("http://localhost:8081/api/appointment/patient/update", {
+    fetch(`${window.APP_CONFIG.API_BASE_URL}/api/appointment/patient/update`, {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -17,13 +17,13 @@ const ViewAllPatient = () => {
   }, []);
 
   const retrieveAllPatient = async () => {
-    const response = await axios.get("http://localhost:8081/api/patient/all");
+    const response = await axios.get(`${window.APP_CONFIG.API_BASE_URL}/api/patient/all`);
     console.log(response.data);
     return response.data;
   };
 
   const deletePatient = (patientId) => {
-    fetch("http://localhost:8081/api/user/delete/id?userId=" + patientId, {
+    fetch(`${window.APP_CONFIG.API_BASE_URL}/api/user/delete/id?userId=` + patientId, {
       method: "GET",
       headers: {
         Accept: "application/json",

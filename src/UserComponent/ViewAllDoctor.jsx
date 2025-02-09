@@ -17,13 +17,13 @@ const ViewAllDoctor = () => {
   }, []);
 
   const retrieveAllDoctor = async () => {
-    const response = await axios.get("http://localhost:8081/api/doctor/all");
+    const response = await axios.get(`${window.APP_CONFIG.API_BASE_URL}/api/doctor/all`);
     console.log(response.data);
     return response.data;
   };
 
   const deleteDoctor = (doctorId) => {
-    fetch("http://localhost:8081/api/user/delete/id?userId=" + doctorId, {
+    fetch(`${window.APP_CONFIG.API_BASE_URL}/api/user/delete/id?userId=` + doctorId, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -78,7 +78,7 @@ const ViewAllDoctor = () => {
                       <td>
                         <img
                           src={
-                            "http://localhost:8081/api/user/" +
+                            `${window.APP_CONFIG.API_BASE_URL}/api/user/` +
                             doctor.doctorImage
                           }
                           class="img-fluid"

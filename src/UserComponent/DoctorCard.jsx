@@ -5,7 +5,7 @@ const DoctorCard = (doctor) => {
     <div className="col">
       <div class="card border-color rounded-card card-hover product-card custom-bg h-100">
         <img
-          src={"http://localhost:8081/api/doctor/" + doctor.item.doctorImage}
+          src={`${window.APP_CONFIG.API_BASE_URL}/api/doctor/` + doctor.item.doctorImage}
           class="card-img-top rounded mx-auto d-block m-2"
           alt="img"
           style={{

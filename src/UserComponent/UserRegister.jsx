@@ -39,20 +39,20 @@ const UserRegister = () => {
   const [specialists, setSpecialists] = useState([]);
 
   const retrieveAllGenders = async () => {
-    const response = await axios.get("http://localhost:8081/api/user/gender");
+    const response = await axios.get(`${window.APP_CONFIG.API_BASE_URL}/api/user/gender`);
     return response.data;
   };
 
   const retrieveAllBloodGroups = async () => {
     const response = await axios.get(
-      "http://localhost:8081/api/patient/bloodgroup/all"
+      `http://localhost:${window.APP_CONFIG.API_BASE_URL}8081/api/patient/bloodgroup/all`
     );
     return response.data;
   };
 
   const retrieveAllSpecialist = async () => {
     const response = await axios.get(
-      "http://localhost:8081/api/doctor/specialist/all"
+      `${window.APP_CONFIG.API_BASE_URL}/api/doctor/specialist/all`
     );
     return response.data;
   };
@@ -86,7 +86,7 @@ const UserRegister = () => {
 
   const saveUser = (event) => {
     event.preventDefault();
-    fetch("http://localhost:8081/api/user/register", {
+    fetch(`${window.APP_CONFIG.API_BASE_URL}/api/user/register`, {
       method: "POST",
       headers: {
         Accept: "application/json",

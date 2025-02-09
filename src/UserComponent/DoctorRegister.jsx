@@ -30,17 +30,17 @@ const DoctorRegister = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const [genders, setGenders] = useState([]);
+  const [ genders, setGenders] = useState([]);
   const [specialists, setSpecialists] = useState([]);
 
   const retrieveAllGenders = async () => {
-    const response = await axios.get("http://localhost:8081/api/user/gender");
+    const response = await axios.get(`${window.APP_CONFIG.API_BASE_URL}/api/user/gender`);
     return response.data;
   };
 
   const retrieveAllSpecialist = async () => {
     const response = await axios.get(
-      "http://localhost:8081/api/doctor/specialist/all"
+      `${window.APP_CONFIG.API_BASE_URL}/api/doctor/specialist/all`
     );
     return response.data;
   };
@@ -84,7 +84,7 @@ const DoctorRegister = () => {
     formData.append("experience", user.experience);
 
     axios
-      .post("http://localhost:8081/api/doctor/register", formData)
+      .post(`${window.APP_CONFIG.API_BASE_URL}/api/doctor/register`, formData)
       .then((result) => {
         result.json().then((res) => {
           console.log(res);
