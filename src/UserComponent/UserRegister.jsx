@@ -45,7 +45,7 @@ const UserRegister = () => {
 
   const retrieveAllBloodGroups = async () => {
     const response = await axios.get(
-      `http://localhost:${window.APP_CONFIG.API_BASE_URL}8081/api/patient/bloodgroup/all`
+      `http://localhost:${window.APP_CONFIG.API_BASE_URL}/api/patient/bloodgroup/all`
     );
     return response.data;
   };
